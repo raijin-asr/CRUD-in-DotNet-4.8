@@ -60,6 +60,15 @@ namespace ReportApp
         protected global::System.Web.UI.WebControls.TableHeaderCell action;
 
         /// <summary>
+        /// forEdit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder forEdit;
+
+        /// <summary>
         /// ads control.
         /// </summary>
         /// <remarks>
@@ -67,15 +76,6 @@ namespace ReportApp
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button ads;
-
-        /// <summary>
-        /// id_Crud control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl id_Crud;
 
         /// <summary>
         /// name_Crud control.
@@ -94,6 +94,15 @@ namespace ReportApp
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputText college_Crud;
+
+        /// <summary>
+        /// btn_Update control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_Update;
 
         /// <summary>
         /// txtId control.
