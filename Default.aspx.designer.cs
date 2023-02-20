@@ -78,33 +78,6 @@ namespace ReportApp
         protected global::System.Web.UI.WebControls.Button ads;
 
         /// <summary>
-        /// name_Crud control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText name_Crud;
-
-        /// <summary>
-        /// college_Crud control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText college_Crud;
-
-        /// <summary>
-        /// btn_Update control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_Update;
-
-        /// <summary>
         /// txtId control.
         /// </summary>
         /// <remarks>

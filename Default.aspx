@@ -9,14 +9,13 @@
             <asp:TableHeaderCell ID="college">College</asp:TableHeaderCell>
             <asp:TableHeaderCell ID="action" ColumnSpan="2">Action</asp:TableHeaderCell>
         </asp:TableHeaderRow>
-
-         
 </asp:Table>
 
-     <asp:Placeholder id="forEdit" runat="server"/>
+   <asp:Placeholder id="forEdit" runat="server"/>
 
    <asp:Button ID="ads" runat="server" Text="Edit" CssClass="btn btn-primary" data-toggle="modal" data-target="#id_Crud"/>
-         <!-- Modal -->
+
+             <%--   <!-- Modal -->
                 <div class="modal fade" id="id_Crud" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
@@ -29,9 +28,9 @@
                             <div class="modal-body">
                                 <div class="form form_Edit">
                                     <label for="name">Name</label>
-                                    <input id="name_Crud" type="text"  runat="server" value='<%# Bind("name") %>' /> <br />
+                                    <input id="name_Crud" type="text"  runat="server" placeholder='<%# Eval("name").ToString() %>' /> <br />
                                     <label for="name">College</label>
-                                    <input type="text"  id="college_Crud" runat="server" value='<%# Bind("college") %>' /> <br />
+                                    <input type="text"  id="college_Crud" runat="server" placeholder="col"/> <br />
                                 </div>
                             </div>
                             <div class="modal-footer">
@@ -41,7 +40,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>--%>
     
 <br />
 
