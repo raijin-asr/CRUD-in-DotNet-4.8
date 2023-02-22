@@ -50,11 +50,6 @@ E:\Microsoft Visual Studio\Repos\ReportApp\bin\roslyn\vbc.exe.config
 E:\Microsoft Visual Studio\Repos\ReportApp\bin\roslyn\vbc.rsp
 E:\Microsoft Visual Studio\Repos\ReportApp\bin\roslyn\VBCSCompiler.exe
 E:\Microsoft Visual Studio\Repos\ReportApp\bin\roslyn\VBCSCompiler.exe.config
-E:\Microsoft Visual Studio\Repos\ReportApp\bin\System.Web.Optimization.xml
-E:\Microsoft Visual Studio\Repos\ReportApp\bin\Newtonsoft.Json.xml
-E:\Microsoft Visual Studio\Repos\ReportApp\bin\Antlr3.Runtime.pdb
-E:\Microsoft Visual Studio\Repos\ReportApp\bin\Microsoft.AspNet.FriendlyUrls.xml
-E:\Microsoft Visual Studio\Repos\ReportApp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 E:\Microsoft Visual Studio\Repos\ReportApp\obj\Debug\ReportApp.csproj.AssemblyReference.cache
 E:\Microsoft Visual Studio\Repos\ReportApp\obj\Debug\ReportApp.csproj.CoreCompileInputs.cache
 E:\Microsoft Visual Studio\Repos\ReportApp\obj\Debug\ReportApp.csproj.CopyComplete
