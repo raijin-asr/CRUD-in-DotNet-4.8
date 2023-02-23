@@ -1,4 +1,5 @@
-﻿using NeoSYSTEM;
+﻿using Microsoft.Ajax.Utilities;
+using NeoSYSTEM;
 using Npgsql;
 using System;
 using System.Collections.Generic;
@@ -11,19 +12,20 @@ namespace ReportApp
 {
     public partial class _Default : Page
     {
-        public class ItemDetail
-        {
-            public string id { get; set; }
-            public string name { get; set; }
-            public string college { get; set; }
+        //public class ItemDetail
+        //{
+        //public string id { get; set; }
+        //public string name { get; set; }
+        //public string college { get; set; }
 
-        }
+        //}
 
-        public List<ItemDetail> items = new List<ItemDetail>();
+
 
         public void Page_Load(object sender, EventArgs e)
         {
-            items = DisplayData();
+                DisplayData();
+
             //try
             //{
             //    if (!IsPostBack)
@@ -38,7 +40,7 @@ namespace ReportApp
             //}
         }
 
-        public List<ItemDetail> DisplayData()
+        public void DisplayData()
         {
 
             Connection connect = new Connection();
@@ -52,7 +54,7 @@ namespace ReportApp
                 NpgsqlDataAdapter adp = new NpgsqlDataAdapter(cmd);
                 DataTable dtbl = new DataTable();
                 adp.Fill(dtbl);
-                items.Clear();
+               
 
                 TableRow trow = null;
                 TableCell tcell;
@@ -140,9 +142,15 @@ namespace ReportApp
                     Modal_Body.Controls.Add(Modal_Label1);
 
                     HtmlInputText textName = new HtmlInputText();
+                    //HtmlGenericControl textName = new HtmlGenericControl("input");
+                    textName.Attributes.Add("type", "text");
                     String id_update = dtbl.Rows[i]["id"].ToString();
                     textName.Value = dtbl.Rows[i]["name"].ToString();
-                    textName.ID = "id_name_" + i.ToString(); 
+                    textName.ID = "id_name"+i.ToString();
+                    //textName.ID = "id_name";
+                    textName.Attributes.Add("onchange", "myFunction(this.value)");
+                    //textName.Attributes.Add("OnTextChanged", "Name_TextChanged");
+                    //textName.TextChanged += new EventHandler(Name_TextChanged);
                     String name_Update = textName.Value;
                     Modal_Body.Controls.Add(textName);
 
@@ -153,6 +161,7 @@ namespace ReportApp
                     HtmlInputText textCollege = new HtmlInputText();
                     textCollege.Value = dtbl.Rows[i]["college"].ToString();
                     textCollege.ID = "id_college_" + i.ToString();
+                    textName.Attributes.Add("onchange", "myFunction1(this.value)");
                     String college_Update = textCollege.Value;
                     Modal_Body.Controls.Add(textCollege);
 
@@ -175,10 +184,14 @@ namespace ReportApp
                     Modal_dismiss.Controls.Add(Modal_anchor);
                     Modal_Footer.Controls.Add(Modal_dismiss);
 
+                    
                     Button Modal_Update = new Button();
                     Modal_Update.Attributes.Add("class", "btn btn-primary");
+                    //Modal_Update.Attributes.Add("type", "submit");
                     Modal_Update.Text = "Update";
                     Modal_Update.ID = "UpdateButton" + i.ToString();
+                    //Modal_Update.Attributes.Add("runat","server");
+                    //Modal_Update.Attributes.Add("AutoPostBack","true");
                     Modal_Update.Click += (object sender, EventArgs e) => { Edit_Click(sender, e, i.ToString(), name_Update, college_Update); };
                     Modal_Footer.Controls.Add(Modal_Update);
 
@@ -210,8 +223,9 @@ namespace ReportApp
             {
 
             }
-            return items;
+          
         }
+        
 
         protected void Close_Btn_Modal(object sender, EventArgs e) { 
 
@@ -270,8 +284,15 @@ namespace ReportApp
             Response.Write("<script>window.location.href='Default.aspx';</script>");
 
         }
-       
-        protected void Edit_Click(object sender, EventArgs e, String id, String name, String college)
+
+        String name_update;
+        protected void Name_TextChanged(object sender, EventArgs e)
+        {
+            TextBox Txt_Name_Update = this.FindControl("id_name_") as TextBox;
+            name_update = Txt_Name_Update.Text;
+        }
+
+        protected void Edit_Click(object sender, EventArgs e, String id,  String name, String college)
         {
             Connection connect = new Connection();
             connect.Connect();
@@ -281,13 +302,26 @@ namespace ReportApp
                 //String id_Up = id + i.ToString();
                 //Control myControl1 = FindControl("textName");
                 //name = (row.FindControl("txtName") as TextBox).Text;
-                //String update_name = (this.FindControl("id_name_" + id) as TextBox).Text;
-                //String update_name= txtModelName.Text;
                 //Control myControl2 = FindControl("textCollege");
                 //String update_college = (this.FindControl("id_college_" + id) as TextBox).Text;
                 //String update_college = txtModelCollege.Text;
+                //String updated_name = Request.Form["id_name_"+id];
 
+                //TextBox txt_update_name ;
+                //String updated_name=null;
+                //for (int i = 0; i < int.Parse(id); i++)
+                //{
+                //    txt_update_name = (TextBox)this.FindControl("id_name_" + i);
+                //    updated_name = txt_update_name.Text;
 
+                //}
+
+                //TextBox txt_update_name = this.FindControl("id_name_"+id) as TextBox;
+                //String updated_name = txt_update_name.Text;
+                //TextBox txt_update_college = this.FindControl("id_college_" + id) as TextBox;
+                //String updated_college = txt_update_college.Text;
+                //String name_Udpdate=txtName.InnerHtml;
+            
                 NpgsqlCommand cmd = new NpgsqlCommand();
                 cmd.Connection = Connection.connect;
 

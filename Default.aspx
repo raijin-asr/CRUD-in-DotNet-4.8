@@ -64,5 +64,18 @@
         <br/><asp:Label id="Label1" runat="server"></asp:Label>
 
 </div>
-
+    <script type="text/javascript" language="javascript"> 
+        function myFunction(val) {
+            alert("The new value is: " + val);
+            textName.Value = val1;
+            document.getElementById("id_name"+id).innerHTML = val;
+            return val;
+        }
+        function myFunction1(val2) {
+            alert("The new value is: " + val2);
+            textCollege.Value = val1;
+            document.getElementById("id_college"+id).innerHTML = val2;
+            return val2;
+        }
+    </script>
 </asp:Content>

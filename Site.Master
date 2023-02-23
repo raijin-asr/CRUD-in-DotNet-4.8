@@ -22,7 +22,7 @@
 
 </head>
 <body>
-    <form runat="server">
+    <form runat="server" id="form1">
         <asp:ScriptManager runat="server">
             <Scripts>
                 <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
