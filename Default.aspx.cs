@@ -59,7 +59,7 @@ namespace ReportApp
                 TableRow trow = null;
                 TableCell tcell;
 
-                for (int i = 0; i < dtbl.Rows.Count - 1; i++)
+                for (int i = 0; i < dtbl.Rows.Count; i++)
                 {
                     trow = new TableRow();
 
@@ -123,7 +123,7 @@ namespace ReportApp
                     Modal_Close.Text = "X";
                     //Modal_Close.Attributes.Add("data-dismiss", "modal");
                     //Modal_Close.Attributes.Add("aria-label", "Close");
-                    Modal_Close.Click += (object sender, EventArgs e) => { Close_Btn_Modal(sender,e); };
+                    Modal_Close.Click += (object sender, EventArgs e) => { Close_Btn_Modal(sender, e); };
 
                     HtmlGenericControl Modal_Span = new HtmlGenericControl("span");
                     Modal_Span.Attributes.Add("aria-hidden", "true");
@@ -142,15 +142,11 @@ namespace ReportApp
                     Modal_Body.Controls.Add(Modal_Label1);
 
                     HtmlInputText textName = new HtmlInputText();
-                    //HtmlGenericControl textName = new HtmlGenericControl("input");
                     textName.Attributes.Add("type", "text");
                     String id_update = dtbl.Rows[i]["id"].ToString();
                     textName.Value = dtbl.Rows[i]["name"].ToString();
-                    textName.ID = "id_name"+i.ToString();
-                    //textName.ID = "id_name";
+                    textName.ID = "id_name" + i.ToString();
                     textName.Attributes.Add("onchange", "myFunction(this.value)");
-                    //textName.Attributes.Add("OnTextChanged", "Name_TextChanged");
-                    //textName.TextChanged += new EventHandler(Name_TextChanged);
                     String name_Update = textName.Value;
                     Modal_Body.Controls.Add(textName);
 
@@ -175,7 +171,7 @@ namespace ReportApp
                     Modal_dismiss.Attributes.Add("class", "btn btn-secondary");
                     //Modal_dismiss.Attributes.Add("data-dismiss", "modal");
                     Modal_dismiss.Text = "Close";
-                    Modal_dismiss.Click += (object sender, EventArgs e) => { Close_Btn_Modal(sender,e); };
+                    Modal_dismiss.Click += (object sender, EventArgs e) => { Close_Btn_Modal(sender, e); };
 
                     HtmlAnchor Modal_anchor = new HtmlAnchor();
                     Modal_anchor.Attributes.Add("class", "btn");
@@ -184,7 +180,7 @@ namespace ReportApp
                     Modal_dismiss.Controls.Add(Modal_anchor);
                     Modal_Footer.Controls.Add(Modal_dismiss);
 
-                    
+
                     Button Modal_Update = new Button();
                     Modal_Update.Attributes.Add("class", "btn btn-primary");
                     //Modal_Update.Attributes.Add("type", "submit");
@@ -208,7 +204,7 @@ namespace ReportApp
                     String id_Delete = dtbl.Rows[i]["id"].ToString();
                     Button btn_Delete = new Button();
                     btn_Delete.Text = "Delete";
-                    btn_Delete.ID = "DeleteButton"+i.ToString();
+                    btn_Delete.ID = "DeleteButton" + i.ToString();
                     btn_Delete.Attributes.Add("class", "btn btn-danger");
                     btn_Delete.Click += (object sender, EventArgs e) => { Delete_Click(sender, e, id_Delete); };
                     tcell.Controls.Add(btn_Delete);
@@ -225,9 +221,10 @@ namespace ReportApp
             }
           
         }
-        
 
-        protected void Close_Btn_Modal(object sender, EventArgs e) { 
+
+        protected void Close_Btn_Modal(object sender, EventArgs e)
+        {
 
             Response.Write("<script>window.location.href='Default.aspx';</script>");
         }

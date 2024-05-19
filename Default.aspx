@@ -2,12 +2,12 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
-    <asp:Table class="table mt-5" ID="Table1" runat="server" Height="123px" Width="100%" >  
-        <asp:TableHeaderRow class="thead-dark">
+    <asp:Table class="table mt-5" ID="Table1" runat="server" Height="123px" Width="100%" style="border:1px solid">  
+        <asp:TableHeaderRow class="thead">
             <asp:TableHeaderCell ID="id" >ID</asp:TableHeaderCell>
             <asp:TableHeaderCell ID="name">Name</asp:TableHeaderCell>
             <asp:TableHeaderCell ID="college">College</asp:TableHeaderCell>
-            <asp:TableHeaderCell ID="action" ColumnSpan="2">Action</asp:TableHeaderCell>
+            <asp:TableHeaderCell ID="action" ColumnSpan="2" style="text-align:center">Action</asp:TableHeaderCell>
         </asp:TableHeaderRow>
 </asp:Table>
 
