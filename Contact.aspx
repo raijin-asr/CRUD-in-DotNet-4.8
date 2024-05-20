@@ -5,13 +5,13 @@
     <h3>Contact</h3>
     <address>
         Ameer S. Rai<br />
-        Dhungedhara-16, Ktm<br />
+        Kathmandu, Nepal<br />
         <abbr title="Phone">Mobile:</abbr>
-        9860245202
+        9860245***
     </address>
 
     <address>
-        <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@ameer.com</a><br />
+        <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@ameer.com</a><br/>
         <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@ameer.com</a>
     </address>
 </asp:Content>
